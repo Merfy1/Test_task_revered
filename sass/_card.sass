@@ -1,10 +1,11 @@
 .cards
-    padding-top: 31px
+    padding-top: 68px
     padding-bottom: 100px
     &-wrapper
         display: flex
         justify-content: center
 .card
+    margin-right: -19px
     background-color: #6A994E
     width: 333px
     border-radius: 11.35px
@@ -21,7 +22,8 @@
         color: white
         font-weight: 800
         font-size: 37.85px
-        line-height: 48.45px
+        line-height: 37.85px
+        display: flex
     &-sub-title
         color: white
         font-weight: 400
@@ -33,6 +35,7 @@
         font-weight: 600
         font-size: 15.14px
         line-height: 19.38px
+        margin-bottom: 10px
     &-mode
         color: white
         font-weight: 500
@@ -41,6 +44,7 @@
     &-list
         list-style: none
         padding: 0
+        margin-top: 25px
         &__item
             color: white
             font-weight: 500
@@ -61,39 +65,46 @@
         &__img
             margin-left: 10px
 .first
-    margin-top: 150px
-    margin-bottom: 28px
+    margin-top: 130px
 .second
     margin-top: 18px
     margin-bottom: 28px
 .third
     margin-top: 45px
-    margin-bottom: 38px
     background-color: #BC4749
     border: none
     display: flex
     justify-content: center
     align-items: center
 
-.one
-    margin-top: 37px
-.two
-    margin-top: 37px
-    margin-left: 300px
-.three
+.dark
     height: 600px
+    margin-top: -37px
     background-color: #1D252B
-    position: absolute
+    z-index: 1
+    &-info
+        margin-top: 45px
 .currency
     color: white
     font-weight: 500
     font-size: 11.35px
     line-height: 14.54px
+    margin-top: -5px
 .time
     color: white
     font-weight: 400
     font-size: 12px
-    line-height: 14.52px
+    line-height: 12px
     opacity: 80%
+    align-self: flex-end
 .op
     opacity: 80%
+.line
+    border-bottom: 1px solid #FFFFFF
+    margin: 15px 0px
+    opacity: 10%
+.full
+    margin-left: -60px
+    width: 333px
+    margin-top: 27px
+    margin-bottom: 21px
