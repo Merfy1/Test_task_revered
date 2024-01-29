@@ -9,6 +9,7 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .header-container {
@@ -76,4 +77,144 @@ img {
 
 .last-link {
   margin-right: 390px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 41.45px;
+  line-height: 50.17px;
+}
+
+.cards {
+  padding-top: 31px;
+  padding-bottom: 100px;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: #6A994E;
+  width: 333px;
+  border-radius: 11.35px;
+}
+.card-container {
+  max-width: 214px;
+  margin: 0 auto;
+}
+.card-title {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.36px;
+  margin-top: 37.85px;
+}
+.card-price {
+  color: white;
+  font-weight: 800;
+  font-size: 37.85px;
+  line-height: 48.45px;
+}
+.card-sub-title {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  opacity: 70%;
+}
+.card-info {
+  color: white;
+  font-weight: 600;
+  font-size: 15.14px;
+  line-height: 19.38px;
+}
+.card-mode {
+  color: white;
+  font-weight: 500;
+  font-size: 13.25px;
+  line-height: 16.96px;
+}
+.card-list {
+  list-style: none;
+  padding: 0;
+}
+.card-list__item {
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15.36px;
+  margin-bottom: 15px;
+}
+.card-list__item:before {
+  content: url("../img/arrow.svg");
+  margin-right: 7px;
+  align-items: center;
+}
+.card-button {
+  width: 214px;
+  height: 39px;
+  border-radius: 7px;
+  background: none;
+  border: 1px white solid;
+  color: white;
+}
+.card-button__img {
+  margin-left: 10px;
+}
+
+.first {
+  margin-top: 150px;
+  margin-bottom: 28px;
+}
+
+.second {
+  margin-top: 18px;
+  margin-bottom: 28px;
+}
+
+.third {
+  margin-top: 45px;
+  margin-bottom: 38px;
+  background-color: #BC4749;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one {
+  margin-top: 37px;
+}
+
+.two {
+  margin-top: 37px;
+  margin-left: 300px;
+}
+
+.three {
+  height: 600px;
+  background-color: #1D252B;
+  position: absolute;
+}
+
+.currency {
+  color: white;
+  font-weight: 500;
+  font-size: 11.35px;
+  line-height: 14.54px;
+}
+
+.time {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  opacity: 80%;
+}
+
+.op {
+  opacity: 80%;
 }/*# sourceMappingURL=style.css.map */
