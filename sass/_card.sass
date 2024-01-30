@@ -14,6 +14,9 @@
     &-container
         max-width: 214px
         margin: 0 auto
+        display: flex
+        flex-direction: column
+        height: 100%
     &-title
         color: white
         font-weight: 600
@@ -65,21 +68,10 @@
         border: 1px white solid
         color: white
         cursor: pointer
+        margin-bottom: 29px
+        margin-top: auto
         &__img
             margin-left: 10px
-.first
-    margin-top: 130px
-.second
-    margin-top: 18px
-    margin-bottom: 28px
-.third
-    margin-top: 45px
-    background-color: #BC4749
-    border: none
-    display: flex
-    justify-content: center
-    align-items: center
-
 .dark
     height: 600px
     margin-top: -37px
@@ -87,6 +79,13 @@
     z-index: 1
     &-info
         margin-top: 45px
+    &-button
+        background-color: #bc4749
+        border: none
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: auto
 .currency
     color: white
     font-weight: 500
