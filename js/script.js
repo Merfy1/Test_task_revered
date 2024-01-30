@@ -1,82 +1,85 @@
-const cardInfo = {
-  'card1': { currency: '$', time: '/Months', defaultPrice: 30 },
-  'card2': { currency: '$', time: '/Months', defaultPrice: 276 },
-  'card3': { currency: '$', time: '/Months', defaultPrice: 420 },
+const cards = document.querySelectorAll('.card-price')
+const cardsPriceAtUsd = {
+  card1: 30,
+  card2: 276,
+  card3: 420,
 };
 
+const CURRENCIES = Object.freeze({
+  USD: '$',
+  EUR: '€',
+  RUB: '₽'
+})
+
+const exchangeRates = {
+      '$': 1,
+      '₽': 89,
+      '€': 0.92,
+  };
+
+let isPerMonth = true;
+let currency = CURRENCIES.USD
+
+function getNextCurrency(currentCurrency) {
+  const currencyValues = Object.values(CURRENCIES);
+  const currentIndex = currencyValues.indexOf(currentCurrency);
+
+  // If the current currency is not found or is the last one, return the first currency
+  if (currentIndex === -1 || currentIndex === currencyValues.length - 1) {
+    return currencyValues[0];
+  }
+
+  // Otherwise, return the next currency in the list
+  return currencyValues[currentIndex + 1];
+}
+
 function changeCurrency() {
-  const currencies = ['$', '₽', '€'];
+  currency = getNextCurrency(currency);
 
-  // Switch currency for all cards
-  document.querySelectorAll('.card-price').forEach((card) => {
-      const cardId = card.id;
-      const currentSymbol = cardInfo[cardId].currency;
-      const currentIndex = currencies.indexOf(currentSymbol);
-      const nextIndex = (currentIndex + 1) % currencies.length;
-      const nextSymbol = currencies[nextIndex];
+  cards.forEach((card) => {
+      const priceKey = card.id;
+      const convertedPrice = cardsPriceAtUsd[priceKey] * exchangeRates[currency];
 
-      const exchangeRates = {
-        '$': 1,
-        '₽': 89,
-        '€': 0.92,
-      };
-
-      const defaultPrice = cardInfo[cardId].defaultPrice;
-      const convertedPrice = defaultPrice * exchangeRates[nextSymbol];
-
-      cardInfo[cardId].currency = nextSymbol;
-
-      card.querySelector('.symbol').textContent = nextSymbol;
-      card.querySelector('.price').textContent = (cardInfo[cardId].time === '/Days') ?
-          calculatePricePerDay(defaultPrice, nextSymbol).toFixed(2).replace(/\.0+$/, '') :
+      card.querySelector('.symbol').textContent = currency;
+      card.querySelector('.price').textContent = !isPerMonth ?
+          calculatePricePerDay(priceKey).toFixed(2).replace(/\.0+$/, '') :
           convertedPrice.toFixed(2).replace(/\.0+$/, '');
   });
 }
 
 function toggleTime() {
   // Switch between Months and Days for all cards
-  document.querySelectorAll('.card-price').forEach((card) => {
-      const cardId = card.id;
-      const currentTime = cardInfo[cardId].time;
-
-      const newTime = (currentTime === '/Months') ? '/Days' : '/Months';
-      cardInfo[cardId].time = newTime;
-
+  cards.forEach((card) => {
+      const newTime = isPerMonth ? '/Days' : '/Months';
       card.querySelector('.time').textContent = newTime;
+  });
 
-      updatePrices(cardId);
+  isPerMonth = !isPerMonth;
+  updatePrices();
+}
+
+function updatePrices() {
+  cards.forEach((card) => {
+      const priceKey = card.id
+      card.querySelector('.price').textContent = isPerMonth
+          ? (cardsPriceAtUsd[priceKey] * exchangeRates[currency]).toFixed(2).replace(/\.0+$/, '')
+          : calculatePricePerDay(priceKey).toFixed(2).replace(/\.0+$/, '');
   });
 }
 
-function calculatePricePerDay(defaultPrice, currentSymbol) {
-  const exchangeRates = {
-      '$': 1,
-      '₽': 89,
-      '€': 0.92,
-  };
-  const exchangeRate = currentSymbol === '$' ? 1 : exchangeRates[currentSymbol];
-  return (defaultPrice * exchangeRate) / 30;
-}
-
-function updatePrices(cardId) {
-  const currentSymbol = cardInfo[cardId].currency;
-  const defaultPrice = cardInfo[cardId].defaultPrice;
-
-  document.querySelectorAll('.card-price').forEach((card) => {
-      card.querySelector('.price').textContent = (cardInfo[cardId].time === '/Days') ?
-          calculatePricePerDay(defaultPrice, currentSymbol).toFixed(2).replace(/\.0+$/, '') :
-          (defaultPrice * exchangeRates[currentSymbol]).toFixed(2).replace(/\.0+$/, '');
-  });
+function calculatePricePerDay(priceKey) {
+  const exchangeRate = exchangeRates[currency];
+  return (cardsPriceAtUsd[priceKey] * exchangeRate) / 30;
 }
 
 const cardsWrapper = document.querySelector('.cards');
-cardsWrapper.addEventListener('click', function(event) {
-  const cardElement = event.target.closest('.card-price');
+cardsWrapper.addEventListener('click', function({ target }) {
+  const cardElement = target.closest('.card-price');
   if (cardElement) {
-      if (event.target.classList.contains('symbol')) {
-          changeCurrency(event, cardElement.id);
+      if (target.classList.contains('symbol')) {
+          changeCurrency();
       } else if (event.target.classList.contains('time')) {
-          toggleTime(event, cardElement.id);
+          toggleTime();
       }
   }
 });
