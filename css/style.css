@@ -61,6 +61,7 @@ img {
   font-weight: 400;
   font-size: 12.09px;
   line-height: 15.48px;
+  cursor: pointer;
 }
 .header-button__sign {
   width: 115px;
@@ -73,6 +74,7 @@ img {
   font-size: 12px;
   line-height: 15.36px;
   margin-left: 14px;
+  cursor: pointer;
 }
 
 .last-link {
@@ -86,6 +88,10 @@ img {
   font-size: 41.45px;
   line-height: 50.17px;
   margin: 0 auto;
+}
+
+.header-navbar__link:hover {
+  font-weight: 600;
 }
 
 .cards {
@@ -102,6 +108,8 @@ img {
   background-color: #6A994E;
   width: 333px;
   border-radius: 11.35px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 .card-container {
   max-width: 214px;
@@ -165,6 +173,7 @@ img {
   background: none;
   border: 1px white solid;
   color: white;
+  cursor: pointer;
 }
 .card-button__img {
   margin-left: 10px;
@@ -232,4 +241,8 @@ img {
   width: 333px;
   margin-top: 27px;
   margin-bottom: 21px;
+}
+
+.card.visible {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

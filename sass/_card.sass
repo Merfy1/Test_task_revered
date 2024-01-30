@@ -9,6 +9,8 @@
     background-color: #6A994E
     width: 333px
     border-radius: 11.35px
+    opacity: 0
+    transition: opacity 1s ease-in-out
     &-container
         max-width: 214px
         margin: 0 auto
@@ -62,6 +64,7 @@
         background: none
         border: 1px white solid
         color: white
+        cursor: pointer
         &__img
             margin-left: 10px
 .first
@@ -110,3 +113,5 @@
     width: 333px
     margin-top: 27px
     margin-bottom: 21px
+.card.visible
+    opacity: 1
