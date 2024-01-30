@@ -16,9 +16,9 @@ function changeCurrency() {
       const nextSymbol = currencies[nextIndex];
 
       const exchangeRates = {
-          '$': 1,
-          '₽': 74.5, // Example exchange rate for Ruble
-          '€': 0.85, // Example exchange rate for Euro
+        '$': 1,
+        '₽': 89,
+        '€': 0.92,
       };
 
       const defaultPrice = cardInfo[cardId].defaultPrice;
@@ -51,8 +51,8 @@ function toggleTime() {
 function calculatePricePerDay(defaultPrice, currentSymbol) {
   const exchangeRates = {
       '$': 1,
-      '₽': 74.5, // Example exchange rate for Ruble
-      '€': 0.85, // Example exchange rate for Euro
+      '₽': 89,
+      '€': 0.92,
   };
   const exchangeRate = currentSymbol === '$' ? 1 : exchangeRates[currentSymbol];
   return (defaultPrice * exchangeRate) / 30;
