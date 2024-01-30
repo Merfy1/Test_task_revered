@@ -48,12 +48,14 @@
     <h1 class="title">Instantly Connect with Your Leads</h1>
     <section class="cards">
         <div class="cards-wrapper">
-            <div class="card">
+            <div class="card" id="one">
                 <div class="card-container">
                     <h2 class="card-title">Basic Survival</h2>
-                    <div class="card-price">
-                        <div class="currency">$</div>
-                        30
+                    <div class="card-price"  > 
+                        <div class="currency">
+                            <span class="symbol" onclick="changeCurrencySymbol(this)">$</span>
+                        </div>
+                        <div class="price" data-default-price="30">30</div>
                         <div class="time">/Months</div>
                     </div>
                     <div class="line"></div>
@@ -71,12 +73,14 @@
                     </button>
                 </div>  
             </div>
-            <div class="card dark">
+            <div class="card dark" id="two">
                 <div class="card-container">
                     <h2 class="card-title">Mission Professional</h2>
                     <div class="card-price">
-                        <div class="currency">$</div>
-                        276
+                        <div class="currency">
+                            <span class="symbol" onclick="changeCurrencySymbol(this)">$</span>
+                        </div>
+                        <div class="price" data-default-price="276">276</div>
                         <div class="time">/Months</div>
                     </div>
                     <div class="line"></div>
@@ -97,12 +101,14 @@
                     </button>
                 </div>
             </div>
-            <div class="card ">
+            <div class="card" id="three">
                 <div class="card-container">
                     <h2 class="card-title">Rocketship Premium</h2>
                     <div class="card-price">
-                        <div class="currency">$</div>
-                        420
+                        <div class="currency">
+                            <span class="symbol" onclick="changeCurrencySymbol(this)">$</span>
+                        </div>
+                        <div class="price" data-default-price="420">420</div>
                         <div class="time">/Months</div>
                     </div>
                     <div class="line"></div>
@@ -126,5 +132,6 @@
             </div>
         </div>
     </section>
+    <script src="js/script.js"></script>
 </body>
 </html>
