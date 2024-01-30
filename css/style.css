@@ -67,6 +67,14 @@ img {
   line-height: 15.48px;
   cursor: pointer;
 }
+.header-button__sign:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.header-button__login:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 .header-button__sign {
   width: 115px;
   height: 40px;
@@ -180,9 +188,17 @@ img {
   cursor: pointer;
   margin-bottom: 29px;
   margin-top: auto;
+  transition: 0.5s;
 }
 .card-button__img {
   margin-left: 10px;
+}
+.card-button:hover {
+  background-color: #bc4749;
+  transition: 0.5s;
+  transform: scale(1.1);
+  border: none;
+  font-weight: 600;
 }
 
 .dark {
@@ -275,7 +291,9 @@ img {
     margin-left: 20px;
   }
   .header-navbar {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .header-button {
     margin-right: 20px;
