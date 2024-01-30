@@ -26,10 +26,9 @@ function changeCurrency(event, cardId) {
       toggleTime(event, cardId);
   }
 }
-
 function toggleTime(event, cardId) {
   const card = document.getElementById(cardId);
-  const currentTime = cardInfo[cardId].time
+  const currentTime = cardInfo[cardId].time;
   if (currentTime === '/Months') {
       const currentSymbol = cardInfo[cardId].currency;
       const defaultPrice = parseFloat(card.querySelector('.price').getAttribute('data-default-price'));
@@ -56,3 +55,13 @@ function toggleTime(event, cardId) {
   }
   cardInfo[cardId].time = (currentTime === '/Months') ? '/Days' : '/Months';
 }
+document.body.addEventListener('click', function(event) {
+  const cardElement = event.target.closest('.card-price');
+  if (cardElement) {
+      if (event.target.classList.contains('symbol')) {
+          changeCurrency(event, cardElement.id);
+      } else if (event.target.classList.contains('time')) {
+          toggleTime(event, cardElement.id);
+      }
+  }
+});
