@@ -214,6 +214,7 @@ img {
   line-height: 12px;
   opacity: 80%;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .op {
