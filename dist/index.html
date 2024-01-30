@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>test_task</title>
+<script defer src="bundle.js"></script></head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-logo">
+                    <a href="/"><img src="/img/logo.svg" alt="logo" class="header-logo__img logo"></a>    
+                    <span class="header-logo__title">Test Task</span>
+                </div>
+                <ul class="header-navbar">
+                    <li class=header-navbar__item>
+                        <a class="header-navbar__link" href="">About Us</a>
+                    </li>
+                    <li class=header-navbar__item>
+                        <a class="header-navbar__link" href="">Features</a>
+                    </li>
+                    <li class=header-navbar__item>
+                        <a class="header-navbar__link" href="">Pricing</a>
+                    </li>
+                    <li class=header-navbar__item>
+                        <a class="header-navbar__link" href="">Product</a>
+                    </li>
+                    <li class=header-navbar__item>
+                        <a class="header-navbar__link" href="">Contact</a>
+                    </li>
+                </ul>
+                <div class="header-button">
+                    <button class="header-button__login">
+                        Login
+                    </button>
+                    <button class="header-button__sign">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 class="title">Instantly Connect with Your Leads</h1>
+    <section class="cards">
+        <div class="cards-wrapper">
+            <div class="card" id="one">
+                <div class="card-container">
+                    <h2 class="card-title">Basic Survival</h2>
+                    <div class="card-price" id="card1" > 
+                        <div class="currency">
+                            <span class="symbol">$</span>
+                        </div>
+                        <div class="price" data-default-price="30">30</div>
+                        <div class="time" >/Months</div>
+                    </div>
+                    <div class="line"></div>
+                    <span class="card-sub-title">Get Torque’s basic plan to optimise you lead generation process.</span>
+                    <div class="line full"></div>
+                    <h3 class="card-info">Core Features</h3>
+                    <span class="card-mode">Basic</span>
+                    <ul class="card-list">
+                        <li class="card-list__item">Email addresses</li>
+                        <li class="card-list__item">Phone numbers</li>
+                        <li class="card-list__item">Unlimited Lists</li>
+                    </ul>
+                    <button class="card-button">
+                        Start Free Trial
+                    </button>
+                </div>  
+            </div>
+            <div class="card dark" id="two">
+                <div class="card-container">
+                    <h2 class="card-title">Mission Professional</h2>
+                    <div class="card-price" id="card2">
+                        <div class="currency">
+                            <span class="symbol">$</span>
+                        </div>
+                        <div class="price" data-default-price="276" >276</div>
+                        <div class="time" >/Months</div>
+                    </div>
+                    <div class="line"></div>
+                    <span class="card-sub-title ">Get Torque’s basic plan to optimise you lead generation process.</span>
+                    <h3 class="card-info dark-info">Core Features</h3>
+                    <span class="card-mode">Boost Tools</span>
+                    <ul class="card-list">
+                        <li class="card-list__item op">Email addresses</li>
+                        <li class="card-list__item op">Phone numbers</li>
+                        <li class="card-list__item op">Unlimited Lists</li>
+                        <li class="card-list__item">Export contacts</li>
+                        <li class="card-list__item">Prospecting</li>
+                        <li class="card-list__item">50MB Per File Attachment</li>
+                    </ul>
+                    <button class="card-button dark-button">
+                        Get started
+                        <img src="img/arrow_button.svg" alt="arrow" class="card-button__img arrow">
+                    </button>
+                </div>
+            </div>
+            <div class="card" id="three">
+                <div class="card-container">
+                    <h2 class="card-title">Rocketship Premium</h2>
+                    <div class="card-price" id="card3">
+                        <div class="currency">
+                            <span class="symbol">$</span>
+                        </div>
+                        <div class="price" data-default-price="420">420</div>
+                        <div class="time" >/Months</div>
+                    </div>
+                    <div class="line"></div>
+                    <span class="card-sub-title">Get Torque’s basic plan to optimise you lead generation process.</span>
+                    <div class="line full"></div>
+                    <h3 class="card-info">Core Features</h3>
+                    <span class="card-mode">Super Fuel</span>
+                    <ul class="card-list">
+                        <li class="card-list__item op">Email addresses</li>
+                        <li class="card-list__item op">Phone numbers</li>
+                        <li class="card-list__item op">Unlimited Lists</li>
+                        <li class="card-list__item op">Export contacts</li>
+                        <li class="card-list__item op">Prospecting</li>
+                        <li class="card-list__item">50MB Per File Attachment</li>
+                        <li class="card-list__item">Basic analytics</li>
+                    </ul>
+                    <button class="card-button">
+                        Start Free Trial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

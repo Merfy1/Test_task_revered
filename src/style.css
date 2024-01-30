@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
+.logo{
+  content: url(./img/logo.svg);
+}
 body {
-  background-image: url(../img/background.jpg);
+  background-image: url(./img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -174,9 +176,11 @@ img {
   margin-bottom: 15px;
 }
 .card-list__item:before {
-  content: url("../img/arrow.svg");
   margin-right: 7px;
   align-items: center;
+}
+.arrow{
+  content: url(./img/arrow_button.svg);
 }
 .card-button {
   width: 214px;

@@ -1,3 +1,5 @@
+import './style.css'
+
 const cards = document.querySelectorAll('.card-price')
 const cardsPriceAtUsd = {
   card1: 30,
